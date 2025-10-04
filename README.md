@@ -1,10 +1,11 @@
-app.get("/", (req, res) => {
+```app.get("/", (req, res) => {
   createUserTable();
   const data = { email: "demo@gmail.com", password:"1234" };
   todoRepository.create(data).then((id) => {
     res.json({ id, ...data });
   });
-});
+});```
+
 
 app.get("/find", (req, res) => {
   const id = 1;
