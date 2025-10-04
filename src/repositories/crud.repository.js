@@ -26,6 +26,7 @@ function crudRepository(tableName) {
 
     // findById returns a single row by id
     findById: async function (id) {
+      console.log(id);
       try {
         const [rows] = await pool.query(
           `SELECT * FROM ${tableName} WHERE id = ?`,

@@ -3,10 +3,11 @@ const pool = require("../config/database");
 const createUserTable = async () => {
   const createTableSQL = `
     CREATE TABLE IF NOT EXISTS USER (
-      user_id INT AUTO_INCREMENT PRIMARY KEY,
+      id INT AUTO_INCREMENT PRIMARY KEY,
       email VARCHAR(255) NOT NULL,
       password VARCHAR(255) NOT NULL,
-      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+      updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
     );
   `;
 
